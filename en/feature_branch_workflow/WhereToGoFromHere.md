@@ -1,0 +1,5 @@
+# Where To Go From Here
+
+For a walkthrough of feature branching on Bitbucket, check out the Using Git Branches documentation. By now, you can hopefully see how feature branches are a way to quite literally multiply the functionality of the single master branch used in the [Centralized Workflow](../centralized_workflow/). In addition, feature branches also facilitate pull requests, which makes it possible to discuss specific commits right inside of your version control GUI.
+
+The Feature Branch Workflow is an incredibly flexible way to develop a project. The problem is, sometimes it’s too flexible. For larger teams, it’s often beneficial to assign more specific roles to different branches. The Gitflow Workflow is a common pattern for managing feature development, release preparation, and maintenance.

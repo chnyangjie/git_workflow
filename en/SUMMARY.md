@@ -1,0 +1,20 @@
+# Summary
+
+* [Comparing Workflows](README.md)
+* [Centralized Workflow](centralized_workflow/README.md)
+    * [How It Works](centralized_workflow/HowItWorks.md)
+    * [Example](centralized_workflow/Example.md)
+    * [Where To Go From Here](centralized_workflow/WhereToGoFromHere.md)
+* [Feature Branch Workflow](feature_branch_workflow/README.md)
+    * [How It Works](feature_branch_workflow/HowItWorks.md)
+    * [Example](feature_branch_workflow/Example.md)
+    * [Where To Go From Here](feature_branch_workflow/WhereToGoFromHere.md)
+* [Gitflow Workflow](gitflow_workflow/README.md)
+    * [How It Works](gitflow_workflow/HowItWorks.md)
+    * [Example](gitflow_workflow/Example.md)
+    * [Where To Go From Here](gitflow_workflow/WhereToGoFromHere.md)
+* [Forking Workflow](forking_workflow/README.md)
+    * [How It Works](forking_workflow/HowItWorks.md)
+    * [Example](forking_workflow/Example.md)
+    * [Where To Go From Here](forking_workflow/WhereToGoFromHere.md)
+

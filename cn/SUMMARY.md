@@ -1,6 +1,6 @@
 # Summary
 
-* [Comparing Workflows](README.md)
+* [比较 Git 工作流](README.md)
 * [集中式工作流](centralized_workflow/README.md)
     * [工作方式](centralized_workflow/HowItWorks.md)
     * [实例](centralized_workflow/Example.md)

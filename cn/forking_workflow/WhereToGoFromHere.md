@@ -1,7 +1,10 @@
-# Where To Go From Here
+# 下一站
 
-If you’re coming from an SVN background, the Forking Workflow may seem like a radical paradigm shift. But don’t be afraid—all it’s really doing is introducing another level of abstraction on top of the Feature Branch Workflow. Instead of sharing branches directly though a single central repository, contributions are published to a server-side repository dedicated to the originating developer.
+如果你之前是使用`SVN`，`Forking`工作流可能看起来像是一个激进的范式转换（**_paradigm shift_**）。
+但不要害怕，这个工作流实际上就是在功能分支工作流之上引入另一个抽象层。
+不是直接通过单个中央仓库来分享分支，而是把贡献代码发布到开发者自己的服务端仓库中。
 
-This article explained how a contribution flows from one developer into the official master branch, but the same methodology can be used to integrate a contribution into any repository. For example, if one part of your team is collaborating on a particular feature, they can share changes amongst themselves in the exact same manner—without touching the main repository.
+示例中解释了，一个贡献如何从一个开发者流到正式的`master`分支中，但同样的方法可以把贡献集成到任一个仓库中。
+比如，如果团队的几个人协作实现一个功能，可以在开发之间用相同的方法分享变更，完全不涉及正式仓库。
 
-This makes the Forking Workflow a very powerful tool for loosely-knit teams. Any developer can easily share changes with any other developer, and any branch can be efficiently merged into the official codebase.
+这使得`Forking`工作流对于松散组织的团队来说是个非常强大的工具。任一开发者可以方便地和另一开发者分享变更，任何分支都能有效地合并到正式代码库中。

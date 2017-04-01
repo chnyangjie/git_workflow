@@ -11,7 +11,7 @@
 
 ## Pull Requests
 
-功能分支除了可以隔离功能的开发，也使得通过[`Pull Requests`](pull-request.md)讨论变更成为可能。
+功能分支除了可以隔离功能的开发，也使得通过`Pull Requests`讨论变更成为可能。
 一旦某个开发完成一个功能，不是立即合并到`master`，而是`push`到中央仓库的功能分支上并发起一个`Pull Request`请求去合并修改到`master`。
 在修改成为主干代码前，这让其它的开发者有机会先去`Review`变更。
 

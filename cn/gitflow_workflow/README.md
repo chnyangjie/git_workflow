@@ -1,9 +1,11 @@
-# Gitflow Workflow
+# Gitflow 工作流
 
 ![PNG](static/01.svg)
 
-The Gitflow Workflow section below is derived from Vincent Driessen at nvie.
+这节介绍的[`Gitflow`工作流](http://nvie.com/posts/a-successful-git-branching-model/)借鉴自在[nvie](http://nvie.com/)的*Vincent Driessen*。
 
-The Gitflow Workflow defines a strict branching model designed around the project release. While somewhat more complicated than the [Feature Branch Workflow](../feature_branch_workflow), this provides a robust framework for managing larger projects.
+`Gitflow`工作流定义了一个围绕项目发布的严格分支模型。虽然比功能分支工作流复杂几分，但提供了用于一个健壮的用于管理大型项目的框架。
 
-This workflow doesn’t add any new concepts or commands beyond what’s required for the Feature Branch Workflow. Instead, it assigns very specific roles to different branches and defines how and when they should interact. In addition to feature branches, it uses individual branches for preparing, maintaining, and recording releases. Of course, you also get to leverage all the benefits of the Feature Branch Workflow: pull requests, isolated experiments, and more efficient collaboration.
+`Gitflow`工作流没有用超出功能分支工作流的概念和命令，而是为不同的分支分配一个很明确的角色，并定义分支之间如何和什么时候进行交互。
+除了使用功能分支，在做准备、维护和记录发布也使用各自的分支。
+当然你可以用上功能分支工作流所有的好处：`Pull Requests`、隔离实验性开发和更高效的协作。

@@ -1,41 +1,48 @@
-# How It Works
+# 工作方式
 
-The Gitflow Workflow still uses a central repository as the communication hub for all developers. And, as in the other workflows, developers work locally and push branches to the central repo. The only difference is the branch structure of the project.
+`Gitflow`工作流仍然用中央仓库作为所有开发者的交互中心。和其它的工作流一样，开发者在本地工作并`push`分支到要中央仓库中。
 
-## Historical Branches
+## 历史分支
 
-Instead of a single master branch, this workflow uses two branches to record the history of the project. The master branch stores the official release history, and the develop branch serves as an integration branch for features. It's also convenient to tag all commits in the master branch with a version number.
+相对使用仅有的一个`master`分支，`Gitflow`工作流使用2个分支来记录项目的历史。`master`分支存储了正式发布的历史，而`develop`分支作为功能的集成分支。这样也方便`master`分支上的所有提交分配一个版本号。
 
 ![PNG](static/02.svg)
 
-The rest of this workflow revolves around the distinction between these two branches.
+剩下要说明的问题围绕着这2个分支的区别展开。
 
-## Feature Branches
+## 功能分支
 
-Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. But, instead of branching off of master, feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop. Features should never interact directly with master.
+每个新功能位于一个自己的分支，这样可以`push`到中央仓库以备份和协作。但功能分支不是从`master`分支上拉出新分支，而是使用`develop`分支作为父分支。当新功能完成时，合并回`develop`分支新功能提交应该从不直接与`master`分支交互。
 
 ![PNG](static/03.svg)
 
-Note that feature branches combined with the develop branch is, for all intents and purposes, the Feature Branch Workflow. But, the Gitflow Workflow doesn’t stop there.
+注意，从各种含义和目的上来看，功能分支加上`develop`分支就是功能分支工作流的用法。但`Gitflow`工作流没有止步于此。.
 
-## Release Branches
+## 发布分支
 
 ![PNG](static/04.svg)
 
-Once develop has acquired enough features for a release (or a predetermined release date is approaching), you fork a release branch off of develop. Creating this branch starts the next release cycle, so no new features can be added after this point—only bug fixes, documentation generation, and other release-oriented tasks should go in this branch. Once it's ready to ship, the release gets merged into master and tagged with a version number. In addition, it should be merged back into develop, which may have progressed since the release was initiated.
+一旦`develop`分支上有了做一次发布（或者说快到了既定的发布日）的足够功能，就从`develop`分支上`fork`一个发布分支。
+新建的分支用于开始发布循环，所以从这个时间点开始之后新的功能不能再加到这个分支上——
+这个分支只应该做`Bug`修复、文档生成和其它面向发布任务。
+一旦对外发布的工作都完成了，发布分支合并到`master`分支并分配一个版本号打好`Tag`。
+另外，这些从新建发布分支以来的做的修改要合并回`develop`分支。
 
-Using a dedicated branch to prepare releases makes it possible for one team to polish the current release while another team continues working on features for the next release. It also creates well-defined phases of development (e.g., it's easy to say, “this week we're preparing for version 4.0” and to actually see it in the structure of the repository).
+使用一个用于发布准备的专门分支，使得一个团队可以在完善当前的发布版本的同时，另一个团队可以继续开发下个版本的功能。
+这也打造定义良好的开发阶段（比如，可以很轻松地说，『这周我们要做准备发布版本4.0』，并且在仓库的目录结构中可以实际看到）。
 
-Common conventions:
+常用的分支约定：
 
-* branch off: develop
-* merge into: master
-* naming convention: release-* or release/*
+* 用于新建发布分支的分支: develop
+* 用于合并的分支: master
+* 分支命名: release-* 或 release/*
 
-## Maintenance Branches
+## 维护分支
 
 ![PNG](static/05.svg)
 
-Maintenance or “hotfix” branches are used to quickly patch production releases. This is the only branch that should fork directly off of master. As soon as the fix is complete, it should be merged into both master and develop (or the current release branch), and master should be tagged with an updated version number.
+维护分支或说是热修复（`hotfix`）分支用于生成快速给产品发布版本（`production releases`）打补丁，这是唯一可以直接从`master`分支`fork`出来的分支。
+修复完成，修改应该马上合并回`master`分支和`develop`分支（当前的发布分支），`master`分支应该用新的版本号打好`Tag`。
 
-Having a dedicated line of development for bug fixes lets your team address issues without interrupting the rest of the workflow or waiting for the next release cycle. You can think of maintenance branches as ad hoc release branches that work directly with master.
+为`Bug`修复使用专门分支，让团队可以处理掉问题而不用打断其它工作或是等待下一个发布循环。
+你可以把维护分支想成是一个直接在`master`分支上处理的临时发布。

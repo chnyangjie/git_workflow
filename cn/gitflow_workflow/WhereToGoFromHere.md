@@ -1,5 +1,5 @@
-# Where To Go From Here
+# 下一站
 
-By now, you’re hopefully quite comfortable with the [Centralized Workflow](../centralized_workflow/), the [Feature Branch Workflow](../feature_branch_workflow/), and the [Gitflow Workflow](../gitflow_workflow/). You should also have a solid grasp on the potential of local repositories, the push/pull pattern, and Git's robust branching and merging model.
+到了这里，但愿你对集中式工作流、功能分支工作流和`Gitflow`工作流已经感觉很舒适了。你应该也牢固的掌握了本地仓库的潜能，`push`/`pull`模式和`Git`健壮的分支和合并模型。
 
-Remember that the workflows presented here are merely examples of what’s possible—they are not hard-and-fast rules for using Git in the workplace. So, don't be afraid to adopt some aspects of a workflow and disregard others. The goal should always be to make Git work for you, not the other way around.
+记住，这里演示的工作流只是可能用法的例子，而不是在实际工作中使用`Git`不可违逆的条例。所以不要畏惧按自己需要对工作流的用法做取舍。不变的目标就是让`Git`为你所用。

@@ -1,9 +1,11 @@
-# Centralized Workflow
+# 集中式工作流
 
 ![PNG](static/01.svg)
 
-Transitioning to a distributed version control system may seem like a daunting task, but you don’t have to change your existing workflow to take advantage of Git. Your team can develop projects in the exact same way as they do with Subversion.
+转到分布式版本控制系统看起来像个令人生畏的任务，但不改变已用的工作流你也可以用上`Git`带来的收益。团队可以用和`Subversion`完全不变的方式来开发项目。
 
-However, using Git to power your development workflow presents a few advantages over SVN. First, it gives every developer their own local copy of the entire project. This isolated environment lets each developer work independently of all other changes to a project—they can add commits to their local repository and completely forget about upstream developments until it's convenient for them.
+但使用`Git`加强开发的工作流，`Git`有相比`SVN`的几个优势。
+首先，每个开发可以有属于自己的整个工程的本地拷贝。隔离的环境让各个开发者的工作和项目的其他部分修改独立开来 ——
+即自由地提交到自己的本地仓库，先完全忽略上游的开发，直到方便的时候再把修改反馈上去。
 
-Second, it gives you access to Git’s robust branching and merging model. Unlike SVN, Git branches are designed to be a fail-safe mechanism for integrating code and sharing changes between repositories.
+其次，`Git`提供了强壮的分支和合并模型。不像`SVN`，`Git`的分支设计成可以做为一种用来在仓库之间集成代码和分享修改的『失败安全』的机制。

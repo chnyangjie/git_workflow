@@ -1,4 +1,4 @@
-# Where To Go From Here
+# 下一站
 
 As you can see, it’s possible to replicate a traditional Subversion development environment using only a handful of Git commands. This is great for transitioning teams off of SVN, but it doesn’t leverage the distributed nature of Git.
 

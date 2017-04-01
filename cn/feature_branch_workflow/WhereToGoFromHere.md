@@ -1,5 +1,7 @@
-# Where To Go From Here
+#  下一站
 
-For a walkthrough of feature branching on Bitbucket, check out the Using Git Branches documentation. By now, you can hopefully see how feature branches are a way to quite literally multiply the functionality of the single master branch used in the [Centralized Workflow](../centralized_workflow/). In addition, feature branches also facilitate pull requests, which makes it possible to discuss specific commits right inside of your version control GUI.
+到了这里，但愿你发现了功能分支可以很直接地在集中式工作流的仅有的`master`分支上完成多功能的开发。
+另外，功能分支还使用了`Pull Request`，使得可以在你的版本控制`GUI`客户端中讨论某个提交。
 
-The Feature Branch Workflow is an incredibly flexible way to develop a project. The problem is, sometimes it’s too flexible. For larger teams, it’s often beneficial to assign more specific roles to different branches. The Gitflow Workflow is a common pattern for managing feature development, release preparation, and maintenance.
+功能分支工作流是开发项目异常灵活的方式。问题是，有时候太灵活了。对于大型团队，常常需要给不同分支分配一个更具体的角色。
+`Gitflow`工作流是管理功能开发、发布准备和维护的常用模式。

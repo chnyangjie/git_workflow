@@ -1,9 +1,14 @@
-# Feature Branch Workflow
+# 功能分支工作流
 
 ![PNG](static/01.svg)
 
-Once you've got the hang of the [Centralized Workflow](../centralized_workflow/), adding feature branches to your development process is an easy way to encourage collaboration and streamline communication between developers.
+一旦你玩转了[集中式工作流](../centralized_workflow/)，在开发过程中可以很简单地加上功能分支，用来鼓励开发者之间协作和简化交流。
 
-The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the master branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the master branch will never contain broken code, which is a huge advantage for continuous integration environments.
+功能分支工作流背后的核心思路是所有的功能开发应该在一个专门的分支，而不是在`master`分支上。
+这个隔离可以方便多个开发者在各自的功能上开发而不会弄乱主干代码。
+另外，也保证了`master`分支的代码一定不会是有问题的，极大有利于集成环境。
 
-Encapsulating feature development also makes it possible to leverage pull requests, which are a way to initiate discussions around a branch. They give other developers the opportunity to sign off on a feature before it gets integrated into the official project. Or, if you get stuck in the middle of a feature, you can open a pull request asking for suggestions from your colleagues. The point is, pull requests make it incredibly easy for your team to comment on each other’s work.
+功能开发隔离也让[`pull requests`工作流](pull-request.md)成为可能，
+`pull requests`工作流能为每个分支发起一个讨论，在分支合入正式项目之前，给其它开发者有表示赞同的机会。
+另外，如果你在功能开发中有问题卡住了，可以开一个`pull requests`来向同学们征求建议。
+这些做法的重点就是，`pull requests`让团队成员之间互相评论工作变成非常方便！

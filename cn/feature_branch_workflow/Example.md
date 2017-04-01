@@ -1,18 +1,19 @@
-# Example
+# 实例
 
-The example included below demonstrates a pull request as a form of code review, but remember that they can serve many other purposes.
+下面的示例演示了如何把`Pull Requests`作为`Code Review`的方式，但注意`Pull Requests`可以用于很多其它的目的。
 
-## Mary begins a new feature
+## 小红开始开发一个新功能
 
 ![PNG](static/02.svg)
 
-Before she starts developing a feature, Mary needs an isolated branch to work on. She can request a new branch with the following command:
+在开始开发功能前，小红需要一个独立的分支。使用下面的命令[新建一个分支](https://www.atlassian.com/git/tutorials/using-branches#git-checkout)：
 
 ```bash
 git checkout -b marys-feature master
 ```
 
-This checks out a branch called marys-feature based on master, and the -b flag tells Git to create the branch if it doesn’t already exist. On this branch, Mary edits, stages, and commits changes in the usual fashion, building up her feature with as many commits as necessary:
+这个命令检出一个基于`master`名为`marys-feature`的分支，`Git`的`-b`选项表示如果分支还不存在则新建分支。
+这个新分支上，小红按老套路编辑、暂存和提交修改，按需要提交以实现功能：
 
 ```bash
 git status
@@ -20,49 +21,54 @@ git add <some-file>
 git commit
 ```
 
-## Mary goes to lunch
+## 小红要去吃个午饭
 
 ![PNG](static/03.svg)
 
-Mary adds a few commits to her feature over the course of the morning. Before she leaves for lunch, it’s a good idea to push her feature branch up to the central repository. This serves as a convenient backup, but if Mary was collaborating with other developers, this would also give them access to her initial commits.
+
+早上小红为新功能添加一些提交。
+去吃午饭前，`push`功能分支到中央仓库是很好的做法，这样可以方便地备份，如果和其它开发协作，也让他们可以看到小红的提交。
 
 ```bash
 git push -u origin marys-feature
 ```
 
-This command pushes marys-feature to the central repository (origin), and the -u flag adds it as a remote tracking branch. After setting up the tracking branch, Mary can call git push without any parameters to push her feature.
+这条命令`push` `marys-feature`分支到中央仓库（`origin`），`-u`选项设置本地分支去跟踪远程对应的分支。
+设置好跟踪的分支后，小红就可以使用`git push`命令省去指定推送分支的参数。
 
-## Mary finishes her feature
+## 小红完成功能开发
 
 ![PNG](static/04.svg)
 
-When Mary gets back from lunch, she completes her feature. Before merging it into master, she needs to file a pull request letting the rest of the team know she's done. But first, she should make sure the central repository has her most recent commits:
+小红吃完午饭回来，完成整个功能的开发。[在合并到`master`之前](https://www.atlassian.com/git/tutorials/git-merge)，
+她发起一个`Pull Request`让团队的其它人知道功能已经完成。但首先，她要确认中央仓库中已经有她最近的提交：
 
 ```bash
 git push
 ```
 
-Then, she files the pull request in her Git GUI asking to merge marys-feature into master, and team members will be notified automatically. The great thing about pull requests is that they show comments right next to their related commits, so it's easy to ask questions about specific changesets.
+然后，在她的`Git` `GUI`客户端中发起`Pull Request`，请求合并`marys-feature`到`master`，团队成员会自动收到通知。
+`Pull Request`很酷的是可以在相关的提交旁边显示评注，所以你可以对某个变更集提问。
 
-## Bill receives the pull request
+## 小黑收到`Pull Request`
 
 ![PNG](static/05.svg)
 
-Bill gets the pull request and takes a look at marys-feature. He decides he wants to make a few changes before integrating it into the official project, and he and Mary have some back-and-forth via the pull request.
+小黑收到了`Pull Request`后会查看`marys-feature`的修改。决定在合并到正式项目前是否要做些修改，且通过`Pull Request`和小红来回地讨论。
 
-## Mary makes the changes
+## 小红再做修改
 
 ![PNG](static/06.svg)
 
-To make the changes, Mary uses the exact same process as she did to create the first iteration of her feature. She edits, stages, commits, and pushes updates to the central repository. All her activity shows up in the pull request, and Bill can still make comments along the way.
+要再做修改，小红用和功能第一个迭代完全一样的过程。编辑、暂存、提交并`push`更新到中央仓库。小红这些活动都会显示在`Pull Request`上，小黑可以断续做评注。
 
-If he wanted, Bill could pull marys-feature into his local repository and work on it on his own. Any commits he added would also show up in the pull request.
+如果小黑有需要，也可以把`marys-feature`分支拉到本地，自己来修改，他加的提交也会一样显示在`Pull Request`上。
 
-## Mary publishes her feature
+## 小红发布她的功能
 
 ![PNG](static/07.svg)
 
-Once Bill is ready to accept the pull request, someone needs to merge the feature into the stable project (this can be done by either Bill or Mary):
+一旦小黑可以接受`Pull Request`，就可以合并功能到稳定项目代码中（可以由小黑或是小红来做这个操作）：
 
 ```bash
 git checkout master
@@ -71,12 +77,16 @@ git pull origin marys-feature
 git push
 ```
 
-First, whoever’s performing the merge needs to check out their master branch and make sure it’s up to date. Then, git pull origin marys-feature merges the central repository’s copy of marys-feature. You could also use a simple git merge marys-feature, but the command shown above makes sure you’re always pulling the most up-to-date version of the feature branch. Finally, the updated master needs to get pushed back to origin.
+无论谁来做合并，首先要检出`master`分支并确认它是最新的。然后执行`git pull origin marys-feature`合并`marys-feature`分支到已经和远程一致的本地`master`分支。
+你可以使用简单`git merge marys-feature`命令，但前面的命令可以保证总是最新的新功能分支。
+最后更新的`master`分支要重新`push`回到`origin`。
 
-This process often results in a merge commit. Some developers like this because it’s like a symbolic joining of the feature with the rest of the code base. But, if you’re partial to a linear history, it’s possible to rebase the feature onto the tip of master before executing the merge, resulting in a fast-forward merge.
+这个过程常常会生成一个合并提交。有些开发者喜欢有合并提交，因为它像一个新功能和原来代码基线的连通符。
+但如果你偏爱线性的提交历史，可以在执行合并时`rebase`新功能到`master`分支的顶部，这样生成一个快进（`fast-forward`）的合并。
 
-Some GUI’s will automate the pull request acceptance process by running all of these commands just by clicking an “Accept” button. If yours doesn’t, it should at least be able to automatically close the pull request when the feature branch gets merged into master
+一些`GUI`客户端可以只要点一下『接受』按钮执行好上面的命令来自动化`Pull Request`接受过程。
+如果你的不能这样，至少在功能合并到`master`分支后能自动关闭`Pull Request`。
 
-## Meanwhile, John is doing the exact same thing
+## 与此同时，小明在做和小红一样的事
 
-While Mary and Bill are working on marys-feature and discussing it in her pull request, John is doing the exact same thing with his own feature branch. By isolating features into separate branches, everybody can work independently, yet it’s still trivial to share changes with other developers when necessary.
+当小红和小黑在`marys-feature`上工作并讨论她的`Pull Request`的时候，小明在自己的功能分支上做完全一样的事。通过隔离功能到独立的分支上，每个人都可以自主的工作，当然必要的时候在开发者之间分享变更还是比较繁琐的。
